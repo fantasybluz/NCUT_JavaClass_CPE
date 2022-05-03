@@ -2,9 +2,9 @@
 > 製作人：fantasybluz 
 ### CPE一星題選集
 1.	[Vito's family	(CPE10406, UVA10041) ](uva10041/uva10041.java)
-2.	Hashmat the brave warrior	(CPE10407, UVA10055)
-3.	Primary Arithmetic	(CPE10404, UVA10035)
-4.	The 3n + 1 problem	(CPE10400, UVA100)
+2.	[Hashmat the brave warrior	(CPE10407, UVA10055)](uva10055/uva10055.java)
+3.	[Primary Arithmetic	CPE10404, UVA10035)](uva10035/uva10035.java)
+4.	[The 3n + 1 problem	(CPE10400, UVA100)](uva100/uva100.java)
 5.	You can say 11	(CPE10460, UVA10929)
 6.	Bangla Numbers	(CPE10414, UVA10101)
 7.	List of Conquests 	(CPE21924, UVA10420)
