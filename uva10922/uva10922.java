@@ -1,5 +1,5 @@
 import java.util.*;
-class uva10922{
+public class uva10922{
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		while(sc.hasNext()){
