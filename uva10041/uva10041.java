@@ -15,9 +15,6 @@ public class uva10041{
                 sum += Math.abs(family_arr[z]-family_arr[z/2]);
             }
             System.out.print(sum);
-            // for(int z=0; z<family_arr.length; z++){
-            //     System.out.print(family_arr[z]+" ");
-            // }
         }
 
     }  

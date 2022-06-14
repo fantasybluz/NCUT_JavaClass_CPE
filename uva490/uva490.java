@@ -7,7 +7,7 @@ public class uva490 {
         int len = 0 ;
         while(sc.hasNextLine()){
             String cases = sc.nextLine();
-            if(cases.equals("")) break ; 
+           // if(cases.equals("")) break ; 
             list.add(cases);
             len = Math.max(cases.length() , len);
         }
