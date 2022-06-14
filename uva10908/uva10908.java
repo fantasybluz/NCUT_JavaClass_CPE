@@ -1,52 +1,42 @@
-import java.util.*;
-import static java.lang.System.*;
+import java.util.Scanner;
 
 public class uva10908{
-  public static void main(String[] args) {
-    Scanner sc=new Scanner(System.in);
-    int T = sc.nextInt();
-    while((T--) > 0 ){
-    	int M = sc.nextInt();
-    	int N = sc.nextInt();
-    	char[][] arr = new char[M][N];  	
-    	int Q = sc.nextInt();
-    	sc.nextLine();
-    	for(int i = 0 ; i < arr.length ; i++){
-    		char[] tmp = sc.nextLine().toCharArray();  	
-    		for(int j = 0 ; j < tmp.length ; j++)
-    			arr[i][j] = tmp[j];    
-    	}
-    	
-    	out.println(arr.length + " " + arr[0].length + " " + Q);
-    	
-    	while((Q--) > 0 ){    	
-    		int r = sc.nextInt();
-    		int c = sc.nextInt();     		
-    		if(r >= arr.length || c >= arr.length){
-    			out.println(1);
-    			continue;
-    		}
-    		char cha = arr[r][c];    		
-    		int index = 1 ; 
-    		boolean flag  = false ;    		
-    		while(true){    			
-    			for(int i = r - index ; i <= r+index ; i++){    			
-    				for(int j = c - index ; j <= c+index ; j++){    				    					
-    					if(i < 0 || j < 0 || i >= M || j >= N || arr[i][j] != cha){    					
-    						flag = true ; 
-    						break ; 
-    					}	
-    				}
-    				if(flag)break;    				
-    			}
-    			
-    			if(flag)break;
-    			else index++;
-    		}
-    	
-    		out.println(index*2-1);
-    	}
-    	
-    }
-  }
-};
+	public static void main(String args[]){
+		Scanner sc=new Scanner(System.in);
+		
+		int cases=sc.nextInt();
+		for(int CaseCount=0;CaseCount<cases;CaseCount++){
+			int m=sc.nextInt(),n=sc.nextInt(),q=sc.nextInt();
+			char grid[][]=new char[m][n]; 
+			for(int i=0;i<m;i++){
+				String temp=sc.next();
+				for(int j=0;j<n;j++){
+					grid[i][j]=temp.charAt(j);
+				}
+			}
+			
+			
+			System.out.println(m+" "+n+" "+q);
+			while((q--)>0){
+				int m2=sc.nextInt(),n2=sc.nextInt();
+				char cmp=grid[m2][n2];
+				
+			
+				int i;
+				for(i=0;i<m;i++){
+					boolean flag=true;
+					for(int j=m2-i;j<=m2+i && flag;j++){
+						for(int k=n2-i;k<=n2+i;k++){
+							if(j<0 || k<0 || j>=m || k>=n || cmp!=grid[j][k]){
+								flag=false;
+								break;
+							}
+						}
+					}
+					if(!flag) break;
+				}
+				System.out.println(i*2-1);
+			}
+		}
+	}
+}
