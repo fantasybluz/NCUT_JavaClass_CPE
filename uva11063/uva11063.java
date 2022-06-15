@@ -1,36 +1,41 @@
 import java.util.*;
-import static java.lang.System.*;
 
 public class uva11063{
-  public static void main(String[] args) {
-    Scanner sc=new Scanner(System.in);
-    int idx = 1 ;
-    while(sc.hasNext()){
-    	int cases = sc.nextInt();
-    	int[] size = new int[cases];
-    	for(int i = 0 ; i < size.length ; i++)size[i] = sc.nextInt();
-    	boolean flag = false ; 
-    	
-    	List<Integer> list = new ArrayList<Integer>();
-    	
-    	for(int i = 0 ; i< size.length ; i++){
-    		if(size[i]<=0){flag = true;break;}
-    		for(int j = i+1 ; j < size.length ; j++){
-    			int sum = size[i]+size[j];
-    			if(list.contains(sum)){
-    				flag = true ;
-    				break ;
-    			}else 
-    				list.add(sum);
-    		}    		
-    	}
-    	
-    	if(flag)
-    		out.printf("Case #%d: It is not a B2-Sequence.\r\n",idx);
-    	else 
-    		out.printf("Case #%d: It is a B2-Sequence.\r\n", idx );
-    	idx ++ ;
-    	out.println();
-    }
-  }
-};
+	public static void main(String args[]){
+		Scanner input = new Scanner(System.in);
+		int times = 1;
+		while (input.hasNext()){
+			boolean flag = false; 
+			int A = input.nextInt(); 
+			
+			int B[] = new int[A];
+			boolean Sum[] = new boolean[20001]; 
+      
+			int current = 0;
+			for (int i = 0; i < A; i++){
+				B[i] = input.nextInt();
+				if (B[i] <= current || B[i] < 1) 
+					flag = true;
+				current = B[i];
+			}
+			
+			if (!flag){
+				for (int i = 0; !flag && i < A; i++)
+					for (int j = i; !flag && j < A; j++){
+						int add = B[i] + B[j];
+						if (!Sum[add])
+							Sum[add] = true;
+						else
+							flag = true;
+					}	
+			}
+				
+			if (flag)
+				System.out.println("Case #" + times + ": It is not a B2-Sequence.");
+			else
+				System.out.println("Case #" + times + ": It is a B2-Sequence.");
+			times++;
+			System.out.println();
+		}
+	}
+}
