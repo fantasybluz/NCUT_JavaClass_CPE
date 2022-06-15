@@ -1,5 +1,5 @@
 import java.util.*;
-class uva10193{
+public class uva10193{
 
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);

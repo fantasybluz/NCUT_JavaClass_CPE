@@ -1,6 +1,6 @@
 import java.util.*;
 
-class uva10931{
+public class uva10931{
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		while (sc.hasNextInt()){
