@@ -1,23 +1,20 @@
-import java.util.*;
-import static java.lang.System.*;
+import java.util.Scanner;
 
-public class uva10268 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        while (sc.hasNext()) {
-            int x = sc.nextInt();
-            sc.nextLine();
-            String[] a = sc.nextLine().split(" ");
-            int n = a.length - 1;
-            int res = 0;
-            for (int i = 0; i < a.length; i++) {
-                int val = Integer.parseInt(a[i]);
-                res += val * n * Math.pow(x, n - 1);
-                n--;
-            }
-            out.println(res);
-        }
-        sc.close();
-    }
-
+public class uva10268{
+	public static void main(String args[]){
+		Scanner sc=new Scanner(System.in);
+		while(sc.hasNextLine()){
+			long x=Long.parseLong(sc.nextLine());
+			String an[]=sc.nextLine().split("\\s+"); 
+			
+			long ans=0;
+			long xp=1;
+			for(int i=an.length-2;i>=0;i--,xp*=x){
+				ans+=Long.parseLong(an[i])*(an.length-1-i)*xp; 
+			}
+			
+			//Output
+			System.out.println(ans);
+		}
+	}
 }
