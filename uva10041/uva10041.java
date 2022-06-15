@@ -1,21 +1,20 @@
 import java.util.*;
 public class uva10041{
-    public static void main(String[] args) {
-       Scanner sca = new Scanner(System.in);
-        int data = sca.nextInt();
-        for(int i = 0; i < data; i++){ 
-            int family = sca.nextInt();
-            int[] family_arr = new int[family];
-            for(int y=0; y<family; y++){
-                family_arr[y]=sca.nextInt();
-            }
-            Arrays.sort(family_arr);
-            int sum =0;
-            for(int z=0; z<family_arr.length; z++){
-                sum += Math.abs(family_arr[z]-family_arr[z/2]);
-            }
-            System.out.print(sum);
-        }
-
-    }  
-}
+  public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+ 	int cases = sc.nextInt();
+ 	while((--cases) >=0){
+ 		int size = sc.nextInt();
+ 		int[] arr = new int[size];
+ 		for(int i = 0 ; i< size ; i++)
+ 			arr[i] = sc.nextInt(); 		
+ 		Arrays.sort(arr); 		
+ 		int len = 0 ;
+ 		for(int i = 0 ; i<size ; i++){
+ 			len += Math.abs(arr[i] - arr[i/2]); 		
+        }	
+ 		System.out.println(len);
+ 	}
+    sc.close();
+  }  
+};
