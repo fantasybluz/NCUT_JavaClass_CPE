@@ -1,36 +1,24 @@
 import java.util.*;
+import static java.lang.System.*;
 public class uva100{
-    static int cycleNumber(int a){
-        int cycle_length = 1;
-        while(a!=1){
-            if(a%2 ==1){
-                a = 3*a+1;
-            }else{
-                a = a/2;
-            }
-            cycle_length++;
-        }
-        return cycle_length;
+  public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    while(sc.hasNextInt()){
+    	int n = sc.nextInt();
+    	int m = sc.nextInt();
+    	int min = Math.min(n , m);
+    	int max = Math.max(n , m);
+    	int fin = 0 ; 
+    	for(int i = min ; i <= max ; i++ ){
+    		int times = 1 ;
+    		int idx = i ; 
+    		while ( idx != 1 ){
+    			idx = idx % 2 ==0 ? idx / 2 : idx * 3 + 1 ;
+    			times ++ ;
+    		}
+    		fin = Math.max(fin , times);
+    	}
+    	out.println(n + " " + m + " " + fin);
     }
-    
-    public static void main(String[] args) {
-        Scanner sca = new Scanner(System.in);
-        int a = sca.nextInt();
-        int b = sca.nextInt();
-        if(a>b){
-            int temp = b;
-            b = a;
-            a = temp;
-        }
-        int max_length =0;
-        int count = 0;
-        for(int i = a; i<b; i++){
-            count = cycleNumber(i);
-            if(count > max_length){
-                max_length = count;
-            }
-            count=0;
-        }
-        System.out.println(a+" "+b+" "+max_length);
-    }
-}
+  }
+};
