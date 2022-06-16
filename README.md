@@ -47,6 +47,6 @@
 44.	[Minesweeper	(CPE10418, UVA10189)](uva10189/uva10189.java)
 45.	[Die Game	(CPE11019, UVA10409)](uva10409/uva10409.java)
 46.	[Eb Alto Saxophone Player	(CPE11020, UVA10415)](uva10415/uva10415.java)
-47.	[Mutant Flatworld Explorers	(CPE23641, UVA118)](uva118/uva11)
+47.	[Mutant Flatworld Explorers	(CPE23641, UVA118)](uva118/uva118.java)
 48.	[Cola	(CPE11067, UVA11150)](uva1150/uva1150.java)
 49.	[Sort! Sort!! and Sort!!!	(CPE11069, UVA11321)](uva11321/uva11321.java)
